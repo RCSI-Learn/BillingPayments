@@ -32,8 +32,6 @@ namespace BasicBilling.API.Controllers
         [HttpGet("pending")]
         public string GetPending([FromQuery]long ClientId)
         {
-            //return ClientId.ToString();
-            //var rng = new Random();
             return Summaries.First(x => (x == "Cool"));
         }
 
