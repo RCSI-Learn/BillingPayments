@@ -13,6 +13,7 @@ D:\RCSI\Lrn\Codes\Net\nexion_test\BasicBilling.API\bin\Debug\netcoreapp3.1\Micro
 D:\RCSI\Lrn\Codes\Net\nexion_test\BasicBilling.API\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
 D:\RCSI\Lrn\Codes\Net\nexion_test\BasicBilling.API\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
 D:\RCSI\Lrn\Codes\Net\nexion_test\BasicBilling.API\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\RCSI\Lrn\Codes\Net\nexion_test\BasicBilling.API\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 D:\RCSI\Lrn\Codes\Net\nexion_test\BasicBilling.API\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
 D:\RCSI\Lrn\Codes\Net\nexion_test\BasicBilling.API\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Sqlite.dll
 D:\RCSI\Lrn\Codes\Net\nexion_test\BasicBilling.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
@@ -60,4 +61,3 @@ D:\RCSI\Lrn\Codes\Net\nexion_test\BasicBilling.API\obj\Debug\netcoreapp3.1\stati
 D:\RCSI\Lrn\Codes\Net\nexion_test\BasicBilling.API\obj\Debug\netcoreapp3.1\BasicBilling.API.dll
 D:\RCSI\Lrn\Codes\Net\nexion_test\BasicBilling.API\obj\Debug\netcoreapp3.1\BasicBilling.API.pdb
 D:\RCSI\Lrn\Codes\Net\nexion_test\BasicBilling.API\obj\Debug\netcoreapp3.1\BasicBilling.API.genruntimeconfig.cache
-D:\RCSI\Lrn\Codes\Net\nexion_test\BasicBilling.API\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll

@@ -27,7 +27,6 @@ namespace BasicBilling.API.Migrations
                     Id = table.Column<Guid>(nullable: false),
                     ClientId = table.Column<long>(nullable: false),
                     Period = table.Column<string>(nullable: true),
-                    MonthYear = table.Column<string>(nullable: true),
                     Amount = table.Column<decimal>(nullable: false),
                     Category = table.Column<string>(nullable: true)
                 },

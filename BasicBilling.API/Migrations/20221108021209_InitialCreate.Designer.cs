@@ -33,9 +33,6 @@ namespace BasicBilling.API.Migrations
                     b.Property<long>("ClientId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("MonthYear")
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("Period")
                         .HasColumnType("TEXT");
 

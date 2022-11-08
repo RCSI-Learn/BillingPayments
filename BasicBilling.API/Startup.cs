@@ -30,7 +30,7 @@ namespace BasicBilling.API
             services.AddControllers();
             services.AddDbContext<DataContext>(opt =>
             {
-                opt.UseSqlite("conexionstring");
+                opt.UseSqlite(Configuration.GetConnectionString("DefaultConnection"));
             });
         }
 
