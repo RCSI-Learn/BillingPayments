@@ -26,9 +26,9 @@ namespace BasicBilling.API.Migrations
                 {
                     Id = table.Column<Guid>(nullable: false),
                     ClientId = table.Column<long>(nullable: false),
-                    Period = table.Column<string>(nullable: true),
-                    Amount = table.Column<decimal>(nullable: false),
-                    Category = table.Column<string>(nullable: true)
+                    Period = table.Column<long>(nullable: true),
+                    Category = table.Column<string>(nullable: true),
+                    State = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

@@ -24,9 +24,6 @@ namespace BasicBilling.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<decimal>("Amount")
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("Category")
                         .HasColumnType("TEXT");
 
@@ -34,6 +31,9 @@ namespace BasicBilling.API.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Period")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("State")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

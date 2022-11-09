@@ -2,7 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BasicBilling.API.Models;
 using Microsoft.AspNetCore.Mvc;
+using BasicBilling.API.DataBase;
+using BasicBilling.API.Service;
 
 namespace BasicBilling.API.Controllers
 {
@@ -11,47 +14,35 @@ namespace BasicBilling.API.Controllers
     public class BillingController : ControllerBase
     {
         
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
+        private readonly Logic _logic;
+        public BillingController(DataContext context){
+            _logic = new Logic(context);
+        }
 
         [HttpPost("bills")]
-        public IEnumerable<WeatherForecast> PostBills()
+        public async Task<ActionResult<List<Bill>>> PostBills([FromBody] Bill bill)
         {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
+            return await _logic.CreateBilling(bill);
         }
 
         [HttpGet("pending")]
-        public string GetPending([FromQuery]long ClientId)
+        public async Task<ActionResult<List<Bill>>> GetPending([FromQuery]long ClientId)
         {
-            return Summaries.First(x => (x == "Cool"));
+            return await _logic.GetPendingsByClientId(ClientId);
         }
 
         [HttpPost("pay")]
-        public IEnumerable<WeatherForecast> PostPay()
+        public async Task<IActionResult> PostPay([FromBody] Bill bill)
         {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
+            var Bill = await _logic.BillPayment(bill);
+            if(Bill == null) return NotFound();
+            return Ok(Bill);
         }
 
         [HttpGet("search")]
-        public string Getsearch([FromQuery]string category)
+        public async Task<ActionResult<List<Bill>>> GetSearch([FromQuery]string category)
         {
-            return category;
+            return await _logic.GetPaymentHistory(category);
         }
     }
 }

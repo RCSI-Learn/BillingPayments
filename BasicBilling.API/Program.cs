@@ -14,7 +14,7 @@ namespace BasicBilling.API
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             //CreateHostBuilder(args).Build().Run();
             var host = CreateHostBuilder(args).Build();
@@ -22,13 +22,13 @@ namespace BasicBilling.API
             var services = scope.ServiceProvider;
             try{
                 var context = services.GetRequiredService<DataContext>();
-                context.Database.Migrate();
-                Seed.SeedData(context);
+                await context.Database.MigrateAsync();
+                await Seed.SeedData(context);
             }
             catch(Exception ex){
                 host.Services.GetRequiredService<ILogger<Program>>().LogError(ex, "Error verifiying data base context.");
             }
-            host.Run();
+            await host.RunAsync();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

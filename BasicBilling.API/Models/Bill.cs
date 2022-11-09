@@ -14,8 +14,8 @@ namespace BasicBilling.API.Models
         public long ClientId { get; set; }
         [ForeignKey("ClientId")]
         public Client Client { get; set; }
-        public string Period { get; set; }
-        public decimal Amount { get; set; }
+        public int Period { get; set; }
         public string Category { get; set; }
+        public string State {get; set; }
     }
 }
