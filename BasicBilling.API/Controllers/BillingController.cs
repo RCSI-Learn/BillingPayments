@@ -35,7 +35,7 @@ namespace BasicBilling.API.Controllers
         public async Task<IActionResult> PostPay([FromBody] Bill bill)
         {
             var Bill = await _logic.BillPayment(bill);
-            if(Bill == null) return NotFound();
+            if(Bill == null) return NotFound(bill);
             return Ok(Bill);
         }
 
