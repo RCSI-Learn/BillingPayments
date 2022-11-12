@@ -16,6 +16,9 @@ namespace BasicBilling.API.Service
         }
         public async Task<List<Bill>> CreateBilling(Bill bill) {
             var NewBills = new List<Bill>();
+            if (bill.Period < 2022 || string.IsNullOrWhiteSpace(bill.Category)) return NewBills; //invalid period
+            bill.Category = bill.Category.Trim().ToUpper();
+
             await _context.Clients.ForEachAsync(x => NewBills.Add(
                 new Bill{
                     Id = Guid.NewGuid(),
@@ -25,8 +28,15 @@ namespace BasicBilling.API.Service
                     State = "PENDING"
                 }
             ));
-            await _context.Bills.AddRangeAsync(NewBills);
-            await _context.SaveChangesAsync();
+            // this section removes all the new bills that already exist, preventing duplicate payment for clients.
+            await _context.Bills.ForEachAsync(x => {
+                NewBills.RemoveAll(y => x.ClientId == y.ClientId && x.Period == y.Period && x.Category == y.Category);
+            });
+            // if exist, add  Client(s) that dont have the bill for the period and category
+            if (NewBills.Count > 0){
+                await _context.Bills.AddRangeAsync(NewBills);
+                await _context.SaveChangesAsync();
+            }
             return NewBills;
         }
         public async Task<List<Bill>> GetPendingsByClientId(long ClientId) {
