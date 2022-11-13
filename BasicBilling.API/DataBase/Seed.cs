@@ -16,27 +16,27 @@ namespace BasicBilling.API.DataBase
             {
                 new Client
                 {
-                    Id = 100,
+                    Id = 1,
                     Name = "Joseph Carlton"
                 },
                 new Client
                 {
-                    Id = 200,
+                    Id = 2,
                     Name = "Maria Juarez"
                 },
                 new Client
                 {
-                    Id = 300,
+                    Id = 3,
                     Name = "Albert Kenny"
                 },
                 new Client
                 {
-                    Id = 400,
+                    Id = 4,
                     Name = "Jessica Phillips"
                 },
                 new Client
                 {
-                    Id = 500,
+                    Id = 5,
                     Name = "Charles Johnson"
                 }
             };
@@ -49,42 +49,42 @@ namespace BasicBilling.API.DataBase
                 new Bill{
                 Id = Guid.NewGuid(),
                 ClientId = 200,
-                Period = 202211,
+                Period = 202001,
                 Category = "WATER",
                 State = "PENDING"
                 },
                 new Bill{
                 Id = Guid.NewGuid(),
                 ClientId = 200,
-                Period = 202211,
+                Period = 202001,
                 Category = "ELECTRICITY",
                 State = "PAID"
                 },
                 new Bill{
                 Id = Guid.NewGuid(),
                 ClientId = 100,
-                Period = 202211,
+                Period = 202001,
                 Category = "SEWER",
                 State = "PENDING"
                 },
                 new Bill{
                 Id = Guid.NewGuid(),
                 ClientId = 100,
-                Period = 202212,
+                Period = 202002,
                 Category = "WATER",
                 State = "PAID"
                 },
                 new Bill{
                 Id = Guid.NewGuid(),
                 ClientId = 100,
-                Period = 202212,
+                Period = 202002,
                 Category = "ELECTRICITY",
                 State = "PENDING"
                 },
                 new Bill{
                 Id = Guid.NewGuid(),
                 ClientId = 100,
-                Period = 202212,
+                Period = 202002,
                 Category = "SEWER",
                 State = "PAID"
                 }
@@ -96,42 +96,42 @@ namespace BasicBilling.API.DataBase
                 new Bill{
                     Id = Guid.NewGuid(),
                     ClientId = 200,
-                    Period = 202211,
+                    Period = 202001,
                     Category = "WATER",
                     State = "PENDING"
                     },
                     new Bill{
                     Id = Guid.NewGuid(),
                     ClientId = 200,
-                    Period = 202211,
+                    Period = 202001,
                     Category = "ELECTRICITY",
                     State = "PAID"
                     },
                     new Bill{
                     Id = Guid.NewGuid(),
                     ClientId = 200,
-                    Period = 202211,
+                    Period = 202001,
                     Category = "SEWER",
                     State = "PENDING"
                     },
                     new Bill{
                     Id = Guid.NewGuid(),
                     ClientId = 200,
-                    Period = 202212,
+                    Period = 202002,
                     Category = "WATER",
                     State = "PAID"
                     },
                     new Bill{
                     Id = Guid.NewGuid(),
                     ClientId = 200,
-                    Period = 202212,
+                    Period = 202002,
                     Category = "ELECTRICITY",
                     State = "PENDING"
                     },
                     new Bill{
                     Id = Guid.NewGuid(),
                     ClientId = 200,
-                    Period = 202212,
+                    Period = 202002,
                     Category = "SEWER",
                     State = "PAID"
                     }
@@ -143,42 +143,42 @@ namespace BasicBilling.API.DataBase
                 new Bill{
                     Id = Guid.NewGuid(),
                     ClientId = 300,
-                    Period = 202211,
+                    Period = 202001,
                     Category = "WATER",
                     State = "PENDING"
                     },
                     new Bill{
                     Id = Guid.NewGuid(),
                     ClientId = 300,
-                    Period = 202211,
+                    Period = 202001,
                     Category = "ELECTRICITY",
                     State = "PAID"
                     },
                     new Bill{
                     Id = Guid.NewGuid(),
                     ClientId = 300,
-                    Period = 202211,
+                    Period = 202001,
                     Category = "SEWER",
                     State = "PENDING"
                     },
                     new Bill{
                     Id = Guid.NewGuid(),
                     ClientId = 300,
-                    Period = 202212,
+                    Period = 202002,
                     Category = "WATER",
                     State = "PAID"
                     },
                     new Bill{
                     Id = Guid.NewGuid(),
                     ClientId = 300,
-                    Period = 202212,
+                    Period = 202002,
                     Category = "ELECTRICITY",
                     State = "PENDING"
                     },
                     new Bill{
                     Id = Guid.NewGuid(),
                     ClientId = 300,
-                    Period = 202212,
+                    Period = 202002,
                     Category = "SEWER",
                     State = "PAID"
                     }
@@ -190,42 +190,42 @@ namespace BasicBilling.API.DataBase
                 new Bill{
                 Id = Guid.NewGuid(),
                 ClientId = 400,
-                Period = 202211,
+                Period = 202001,
                 Category = "WATER",
                 State = "PENDING"
                 },
                 new Bill{
                 Id = Guid.NewGuid(),
                 ClientId = 400,
-                Period = 202211,
+                Period = 202001,
                 Category = "ELECTRICITY",
                 State = "PAID"
                 },
                 new Bill{
                 Id = Guid.NewGuid(),
                 ClientId = 400,
-                Period = 202211,
+                Period = 202001,
                 Category = "SEWER",
                 State = "PENDING"
                 },
                 new Bill{
                 Id = Guid.NewGuid(),
                 ClientId = 400,
-                Period = 202212,
+                Period = 202002,
                 Category = "WATER",
                 State = "PAID"
                 },
                 new Bill{
                 Id = Guid.NewGuid(),
                 ClientId = 400,
-                Period = 202212,
+                Period = 202002,
                 Category = "ELECTRICITY",
                 State = "PENDING"
                 },
                 new Bill{
                 Id = Guid.NewGuid(),
                 ClientId = 400,
-                Period = 202212,
+                Period = 202002,
                 Category = "SEWER",
                 State = "PAID"
                 }
@@ -237,42 +237,42 @@ namespace BasicBilling.API.DataBase
                 new Bill{
                 Id = Guid.NewGuid(),
                 ClientId = 500,
-                Period = 202211,
+                Period = 202001,
                 Category = "WATER",
                 State = "PENDING"
                 },
                 new Bill{
                 Id = Guid.NewGuid(),
                 ClientId = 500,
-                Period = 202211,
+                Period = 202001,
                 Category = "ELECTRICITY",
                 State = "PAID"
                 },
                 new Bill{
                 Id = Guid.NewGuid(),
                 ClientId = 500,
-                Period = 202211,
+                Period = 202001,
                 Category = "SEWER",
                 State = "PENDING"
                 },
                 new Bill{
                 Id = Guid.NewGuid(),
                 ClientId = 500,
-                Period = 202212,
+                Period = 202002,
                 Category = "WATER",
                 State = "PAID"
                 },
                 new Bill{
                 Id = Guid.NewGuid(),
                 ClientId = 500,
-                Period = 202212,
+                Period = 202002,
                 Category = "ELECTRICITY",
                 State = "PENDING"
                 },
                 new Bill{
                 Id = Guid.NewGuid(),
                 ClientId = 500,
-                Period = 202212,
+                Period = 202002,
                 Category = "SEWER",
                 State = "PAID"
                 }

@@ -6,14 +6,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { Modal } from 'reactstrap';
 import { Bill } from "../Models/bill";
-import { useState, useEffect } from 'react';
-//import CreateBill from "./modal/create_bill";
+import { useState} from 'react';
 import useCreateBill from "./hook/useCreateBill";
 import usePendingBills from "./hook/usePendingBills";
 import useSearchByCategory from "./hook/useSearchBills";
 
-const GetUrl = "http://localhost:5000/billing/pending?ClientId=200";
-//const UrlGetClientPendingsById = "http://localhost:5000/billing/pending?ClientId=300";
+//const GetUrl = "http://localhost:5000/billing/pending?ClientId=100";
 const UrlPostCreateBill = "http://localhost:5000/billing/bills";
 const UrlGetClientPendingsById = "http://localhost:5000/billing/pending";
 const UrlPostPayBill = "http://localhost:5000/billing/pay";
@@ -23,11 +21,11 @@ function App() {
   /** Fill list */
   const [bills, setBills] = useState<Bill[]>([]);
 
-  useEffect(() => {
-    axios.get(GetUrl).then(response => {
-      setBills(response.data);
-    })
-  }, [])
+  // useEffect(() => {
+  //   axios.get(GetUrl).then(response => {
+  //     setBills(response.data);
+  //   })
+  // }, [])
 
 
   /** Create Bill */
@@ -109,7 +107,7 @@ function App() {
   //function PayBill(PendingBill: Bill) {
     console.log(PendingBill);
     await axios.post(UrlPostPayBill, { clientId: PendingBill.clientId, period: PendingBill.period, category: PendingBill.category }).then(response => {
-      // this can be change in the future by I prefer show the paide
+      // this can be change in the future but I prefer show the bill paid
       let arResponse: Array<Bill> = [response.data];
       setBills(arResponse);
       // setinputClientId(PendingBill.clientId.toString());
@@ -160,10 +158,10 @@ function App() {
       <Modal isOpen={isOpenCreateBill} toggle={toggleCreateBill}>
         <div className="form-group">
           <label htmlFor="period">Period</label>
-          <input className="form-control" type="text" name="period" id="period" onChange={handleInputChange} />
+          <input className="form-control" type="text" autoComplete='off' name="period" id="period" onChange={handleInputChange} />
           <br />
           <label htmlFor="category">Category</label>
-          <input className="form-control" type="text" name="category" id="category" onChange={handleInputChange} />
+          <input className="form-control" type="text" autoComplete='off' name="category" id="category" onChange={handleInputChange} />
           <br />
           <button onClick={PostCreateBill}> Create </button>
         </div>
@@ -172,7 +170,7 @@ function App() {
       <Modal isOpen={isOpenPendingBills} toggle={togglePendingBills}>
         <div className="form-group">
           <label htmlFor="clientId">Client Id</label>
-          <input className="form-control" value={clientId} type="text" name="clientId" id="clientId" onChange={(clientId) => handleInputClientId(clientId)} />
+          <input className="form-control" value={clientId} type="text" autoComplete='off' name="clientId" id="clientId" onChange={(clientId) => handleInputClientId(clientId)} />
           <br />
           <button onClick={GetClientPendingsById}>Search</button>
         </div>
