@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using BasicBilling.API.Service;
 
 namespace BasicBilling.API
 {
@@ -32,6 +33,7 @@ namespace BasicBilling.API
             {
                 opt.UseSqlite(Configuration.GetConnectionString("DefaultConnection"));
             });
+            services.AddScoped<ILogic, Logic>();
             services.AddCors(opt =>
             {
                 opt.AddPolicy("CorsPolicy", policy =>

@@ -13,36 +13,61 @@ namespace BasicBilling.API.Controllers
     [Route("[controller]")]
     public class BillingController : ControllerBase
     {
-        
-        private readonly Logic _logic;
-        public BillingController(DataContext context){
-            _logic = new Logic(context);
+        private readonly ILogic _logic;
+        public BillingController(ILogic logic)
+        {
+            _logic = logic;
         }
 
         [HttpPost("bills")]
-        public async Task<ActionResult<List<Bill>>> PostBills([FromBody] Bill bill)
+        public async Task<ActionResult<IEnumerable<Bill>>> PostBills([FromBody] Bill bill)
         {
-            return await _logic.CreateBilling(bill);
+            var BillsCreated = await _logic.CreateBilling(bill);
+            if (BillsCreated.Count() == 0)
+            {
+                return NotFound();
+            }
+            return Ok(BillsCreated);
         }
 
         [HttpGet("pending")]
-        public async Task<ActionResult<List<Bill>>> GetPending([FromQuery]long ClientId)
+        public async Task<ActionResult<IEnumerable<Bill>>> GetPending([FromQuery] long ClientId)
         {
-            return await _logic.GetPendingsByClientId(ClientId);
+            var PendingsByClientId = await _logic.GetPendingsByClientId(ClientId);
+            if (PendingsByClientId == null)
+            {
+                return NotFound();
+            }
+            return Ok(PendingsByClientId);
         }
 
         [HttpPost("pay")]
-        public async Task<IActionResult> PostPay([FromBody] Bill bill)
+        public async Task<ActionResult> PostPay([FromBody] Bill bill)
         {
             var Bill = await _logic.BillPayment(bill);
-            if(Bill == null) return NotFound(bill);
+            if (Bill == null) return NotFound(bill);
             return Ok(Bill);
         }
 
         [HttpGet("search")]
-        public async Task<ActionResult<List<Bill>>> GetSearch([FromQuery]string category)
+        public async Task<ActionResult<IEnumerable<ClientBillDto>>> GetSearch([FromQuery] string category)
         {
-            return await _logic.GetPaymentHistory(category);
+            var PaymentHistory = await _logic.GetPaymentHistory(category);
+            if (PaymentHistory == null)
+            {
+                return NotFound();
+            }
+            return Ok(PaymentHistory);
+        }
+        [HttpGet("clients")]
+        public async Task<ActionResult<IEnumerable<Client>>> GetAllClients()
+        {
+            var Clients = await _logic.GetAllClients();
+            if (Clients == null)
+            {
+                return NotFound();
+            }
+            return Ok(Clients);
         }
     }
 }

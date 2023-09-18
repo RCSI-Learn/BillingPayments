@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "udWDlWobRW+zeuKCQNBSLziaPN+vpXW7oBzoxs8+60zRNCuW+eg2UGSmSGLvh2ce/rDLVgCMo3U6b2NEjO6nlQ==",
+  "dgSpecHash": "jtRDEymhDP8MvI6E74Py5u8OfMq66iHBR/p9sod+wFIZfIXmFTdC6t2wRUuJ13OuK+YWK00plmUUfOYhD74VSA==",
   "success": true,
-  "projectFilePath": "D:\\RCSI\\Lrn\\Codes\\Net\\nexion_test\\BasicBilling.API\\BasicBilling.API.csproj",
+  "projectFilePath": "D:\\RCSI\\post\\nexion\\nexion_test\\BasicBilling.API\\BasicBilling.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\RCSI\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\RCSI\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",

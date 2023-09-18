@@ -1196,11 +1196,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\RCSI\\Lrn\\Codes\\Net\\nexion_test\\BasicBilling.API\\BasicBilling.API.csproj",
+      "projectUniqueName": "D:\\RCSI\\post\\nexion\\nexion_test\\BasicBilling.API\\BasicBilling.API.csproj",
       "projectName": "BasicBilling.API",
-      "projectPath": "D:\\RCSI\\Lrn\\Codes\\Net\\nexion_test\\BasicBilling.API\\BasicBilling.API.csproj",
+      "projectPath": "D:\\RCSI\\post\\nexion\\nexion_test\\BasicBilling.API\\BasicBilling.API.csproj",
       "packagesPath": "C:\\Users\\RCSI\\.nuget\\packages\\",
-      "outputPath": "D:\\RCSI\\Lrn\\Codes\\Net\\nexion_test\\BasicBilling.API\\obj\\",
+      "outputPath": "D:\\RCSI\\post\\nexion\\nexion_test\\BasicBilling.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
