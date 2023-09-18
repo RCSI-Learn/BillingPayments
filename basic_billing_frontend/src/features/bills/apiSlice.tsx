@@ -1,11 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { NewBill } from "../../models/NewBill";
 
-//const UrlPostCreateBill = "http://localhost:5000/billing/bills";
-//const UrlGetClientPendingsById = "http://localhost:5000/billing/pending";
-//const UrlPostPayBill = "http://localhost:5000/billing/pay";
-const UrlGetSearchByCategory = "http://localhost:5000/billing/search";
-
 export const apiSlice = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({

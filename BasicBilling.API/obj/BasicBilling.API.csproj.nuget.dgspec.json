@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\RCSI\\post\\nexion\\nexion_test\\BasicBilling.API\\BasicBilling.API.csproj": {}
+    "d:\\RCSI\\post\\nexion\\nexion_test\\BasicBilling.API\\BasicBilling.API.csproj": {}
   },
   "projects": {
-    "D:\\RCSI\\post\\nexion\\nexion_test\\BasicBilling.API\\BasicBilling.API.csproj": {
+    "d:\\RCSI\\post\\nexion\\nexion_test\\BasicBilling.API\\BasicBilling.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\RCSI\\post\\nexion\\nexion_test\\BasicBilling.API\\BasicBilling.API.csproj",
+        "projectUniqueName": "d:\\RCSI\\post\\nexion\\nexion_test\\BasicBilling.API\\BasicBilling.API.csproj",
         "projectName": "BasicBilling.API",
-        "projectPath": "D:\\RCSI\\post\\nexion\\nexion_test\\BasicBilling.API\\BasicBilling.API.csproj",
+        "projectPath": "d:\\RCSI\\post\\nexion\\nexion_test\\BasicBilling.API\\BasicBilling.API.csproj",
         "packagesPath": "C:\\Users\\RCSI\\.nuget\\packages\\",
-        "outputPath": "D:\\RCSI\\post\\nexion\\nexion_test\\BasicBilling.API\\obj\\",
+        "outputPath": "d:\\RCSI\\post\\nexion\\nexion_test\\BasicBilling.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

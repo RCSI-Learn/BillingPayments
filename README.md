@@ -40,3 +40,41 @@ especification, the Id used is the described on the pdf file.
 - The application has a main table where the bills are displayed.
 - In the Top are 3 buttons for bill creation and searching actions.
 - If any bill in the table has the **PENDING** state, a button for payment will be displayed in the right.
+
+
+# Last Update
+## BasicBilling.API
+Added ILogic interface in Models folder.
+Added ILogic and Logic to the dependencies collection in Startup.cs.
+Added ClientBillDto.cs for the PaymentHistory result.
+Modification in the Logic class to return IEnumerable instead of List.
+Modificacion en el metodo CreateBilling, ya no se usa ForEachAsync.
+Modification in the GetPaymentHistory method, an IEnumerable of type ClientBillDto is returned.
+Modification in BillingController to receive and return IEnumerable.
+Modification, in the controller constructor the ILogic dependency is injected which was registered in the dependency collection in Startup.cs.
+Added the GetAllClients method to help with the operation of the frontend application.
+
+## basic_billing_frontend
+Reorganization of folders and files that make up the project specially on App.tsx file.
+Modified appearance application.
+Removed old libraries for style, styles are specified on elements and components.
+Removed use of Axios
+Added Hooks and Redux Toolkit Query.
+Added Models folder for Bill, Client, NewBill and ClientBillDto interfaces.
+Added requests for all clients, to be able to consult pending invoices.
+Explanation of components folder:
+- Components -> MainContainer.tsx and MainContainer.css: Contains all other components.
+- basicElements -> Contains all basic HTML elements in a react component.
+	- Select.tsx -> Select HTML element, which receives a data dictionary to assemble the options and returns the value selected by the user in a function.
+- forms -> Contains all react componentes that are a form.
+	- CreateBillForm.tsx -> Form for creating invoices for all clients by period and category.
+- Lists -> Contains all react componentes that are a list or list item.
+	- ClientBillsPendingList.tsx -> shows the list of pending invoices of a client and contains the button which allows you to pay the invoice.
+	- ClientList.tsx -> Gets the list of clients and generates a ClientListIem for each client.
+	- ClientListIem.tsx -> Displays the customer's name and calls the ClientBillsPendingList component to check their pending invoices.
+	- PaymentHistoryList.tsx -> Shows paid invoices filtered by category.
+
+## Notes
+The project was edited and corrected with visual studio code.
+To run the project you must go to the BasicBilling.API path and execute the dotnet build and dotnet run commands.
+To run the front project you must go to the basic_billing_frontend path and execute the npm install and npm start commands.
